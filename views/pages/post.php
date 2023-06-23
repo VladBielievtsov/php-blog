@@ -59,18 +59,22 @@
       ?>
       <div class="d-flex justify-content-between align-items-center">
         <h1 class="mt-4"><?= $post['title']; ?></h1>
-        <div>
-          <?php if (!$liked) { ?>
-              <form method="post">
-                <input type="submit" class="btn btn-danger" name="like" value="Like">
-              </form>
-            <?php } else { ?>
-              <form method="post">
-                <input type="submit" class="btn btn-danger" name="like" value="Liked">
-              </form>
-            <?php }
+        <?php if ($_SESSION['user']) {
           ?>
-        </div>
+            <div>
+                <?php if (!$liked) { ?>
+                  <form method="post">
+                    <input type="submit" class="btn btn-danger" name="like" value="Like">
+                  </form>
+                <?php } else { ?>
+                  <form method="post">
+                    <input type="submit" class="btn btn-danger" name="like" value="Liked">
+                  </form>
+                <?php }
+              ?>
+            </div>
+          <?php
+        } ?>
       </div>
       <div class="d-flex justify-content-between align-items-center">
         <a href="user?id=<?= $post['author'] ?>" class="post-head__author">

@@ -12,6 +12,7 @@ Router::page('/admin', 'admin');
 Router::page('/post', 'post');
 Router::page('/add-post', 'add-post');
 Router::page('/user', 'user');
+Router::page('/users', 'users');
 
 Router::post('/auth/register', Auth::class, 'register', true, true);
 Router::post('/auth/login', Auth::class, 'login', true);

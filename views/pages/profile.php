@@ -84,7 +84,7 @@
               <?php
             }
           } else {
-            ?> <h4>There are no posts</h4> <?php
+            ?> <h4>There are no posts 😔</h4> <?php
           }
           
         ?>
@@ -120,7 +120,7 @@
               <?php
             }
           } else {
-            ?> <h4>There are no liked posts</h4> <?php
+            ?> <h4>There are no liked posts 😔</h4> <?php
           }
           
           ?>

@@ -17,4 +17,9 @@ class User {
     }
     return $user;
   }
+
+  public static function searchUser ($str) {
+    $users = \R::getAll("SELECT * FROM `users` WHERE `username` LIKE '%$str%' OR `fullname` LIKE '%$str%'");
+    return $users;
+  }
 }

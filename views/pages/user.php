@@ -46,20 +46,25 @@
     <div class="posts">
       <?php
         $posts = Post::getAll($user['id']);
-        
-        foreach ($posts as $post) {
-          ?>
-            <a href="/post?id=<?= $post['id'] ?>" class="card">
-              <img src="<?= $post['image'] ?>" class="card-img-top" alt="<?= $post['title'] ?>">
-              <div class="card-body">
-                <div class="d-flex gap-2 justify-content-between">
-                  <span><?= $post['date'] ?></span>
+
+        if (!empty($posts)) {
+          foreach ($posts as $post) {
+            ?>
+              <a href="/post?id=<?= $post['id'] ?>" class="card">
+                <img src="<?= $post['image'] ?>" class="card-img-top" alt="<?= $post['title'] ?>">
+                <div class="card-body">
+                  <div class="d-flex gap-2 justify-content-between">
+                    <span><?= $post['date'] ?></span>
+                  </div>
+                  <h5 class="card-title"><?= $post['title'] ?></h5>
                 </div>
-                <h5 class="card-title"><?= $post['title'] ?></h5>
-              </div>
-            </a>
-          <?php
+              </a>
+            <?php
+          }
+        } else {
+          ?> <h4>There are no posts 😔</h4> <?php
         }
+        
       ?>
       </div>
   </div>

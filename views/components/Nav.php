@@ -27,11 +27,11 @@
           }
           if (!$_SESSION["user"]) {
             ?>
-              <li class="nav-item">
+              <li class="nav-item me-4">
                 <a class="nav-link" href="/login">Sign in</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/register">Sign up</a>
+                <a class="btn btn-primary" href="/register">Sign up</a>
               </li>
               <?php
           } else {
@@ -44,7 +44,13 @@
                   <button type="submit" class="nav-link">Logout</button>
                 </form>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" style="margin-left: 24px;">
+                <form id="searchUserForm" method="GET" action="/users" class="d-flex" role="search">
+                  <input id="searchUserInput" name="username" class="form-control me-2" type="search" placeholder="Search user" aria-label="Search">
+                  <button class="btn btn-outline-success" style="margin-left: 8px;" type="submit">Search</button>
+                </form>
+              </li>
+              <li class="nav-item" style="margin-left: 24px;">
                 <a href="/add-post" class="btn btn-primary">Add Post</a>
               </li>
             <?php
